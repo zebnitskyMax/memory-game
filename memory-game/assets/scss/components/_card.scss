@@ -1,0 +1,19 @@
+.main {
+    width: 40%;
+    padding: 2rem 2rem;
+
+    .main-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 4rem;
+
+        .card {
+            width: 3rem;
+            height: 6em;
+            border: 1px solid black;
+            border-radius: 1rem;
+            background: goldenrod;
+        }
+    }
+}

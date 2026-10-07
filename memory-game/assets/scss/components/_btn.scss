@@ -1,0 +1,23 @@
+.header-btn {
+    display: inline-block;
+    padding: 15px 20px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #0b63f6;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    width: 8rem;
+}
+
+.header-btn:hover {
+    background-color: #084ec2;
+}
+
+.header-btn:active {
+    transform: scale(0.98);
+}
