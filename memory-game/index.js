@@ -1,16 +1,5 @@
 console.log('Project in process!!')
 
-// const body = document.querySelector('body');
-// console.log(body)
-
-// const h1 = document.createElement('h1');
-// body.appendChild(h1);
-// h1.textContent = 'Project in process!!! Sorry!! I need a little more time!!'
-
-// const div_Img = document.createElement('div');
-// body.append(div_Img);
-// div_Img.classList.add('box-img');
-
 
 
 
@@ -31,14 +20,16 @@ function createElements(elem, parent, n, nameClass) {
 
     }
 }
+
 createBlock('header', 'body', 'header');
 createBlock('main', 'body', 'main');
 createBlock('section', 'main', 'main-cards');
 createElements('button', 'header', 2, 'header-btn');
-createElements('div', 'section', 15, 'card');
+createElements('div', 'section', 16, 'card');
+
+
 
 createBlock('div_Img', 'body', 'box-img');
-createBlock('h1', 'body', 'h1-text');
 
 // Добавляем класс
 function addClassName(findElem, nameClass) {
@@ -52,6 +43,12 @@ function addFewClasses(nameClass, addNewClass) {
 }
 addFewClasses('.header-btn', 'btn')
 
+const btnStart = document.querySelector('.btn0');
+console.log(btnStart)
+btnStart.addEventListener('click', () => {
+    window.location.reload()
+})
+
 // Добавляем текст
 function addText(elem, text) {
     const elemText = document.querySelector(elem)
@@ -59,4 +56,27 @@ function addText(elem, text) {
 }
 addText('.header-btn', 'Start')
 addText('.btn1', 'Leaders table')
-addText('.h1-text', 'Project in process!!! Sorry!! I need a little more time!!')
+
+// создаем элементы для блока
+const cardsAllFront = document.querySelectorAll('.card');
+cardsAllFront.forEach(el => {
+    const elem = document.createElement('div');
+    el.append(elem);
+    elem.classList.add('card-front');
+})
+
+addFewClasses('.card-front', 'front')
+
+const cardsAllBack = document.querySelectorAll('.card');
+cardsAllBack.forEach(el => {
+    const elem = document.createElement('div');
+    el.append(elem);
+    elem.classList.add('card-back');
+})
+
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('card-back')) {
+        const card = e.target.parentElement
+        card.classList.toggle('flipped')
+    }
+})
