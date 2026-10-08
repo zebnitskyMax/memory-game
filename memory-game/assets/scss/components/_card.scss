@@ -1,0 +1,22 @@
+.main {
+    padding: 2rem 2rem;
+
+    .main-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 3rem;
+
+        .card {
+            width: 4rem;
+            height: 8em;
+            border-radius: 1rem;
+            transition: .2s all linear;
+
+            &:hover {
+                transform: scale(1.1);
+                cursor: pointer;
+            }
+        }
+    }
+}
